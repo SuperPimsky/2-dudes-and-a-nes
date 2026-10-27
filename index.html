@@ -45,27 +45,9 @@
   }
 
   /* ---- Cartridge ---- */
-  .cart{
-    position:sticky;top:40px;
-    background:var(--gray);
-    border-radius:6px 6px 3px 3px;
-    padding:34px 22px 28px;
-    box-shadow:inset 0 -6px 0 var(--gray-dk), 0 18px 40px rgba(0,0,0,.45);
-  }
-  .cart::before{ /* grip ridges */
-    content:"";position:absolute;left:22px;right:22px;top:10px;height:14px;
-    background:repeating-linear-gradient(90deg,var(--gray-dk) 0 3px,transparent 3px 9px);
-    opacity:.7;
-  }
-  .cart img{
-    display:block;width:100%;height:auto;aspect-ratio:1;
-    background:#fff;border:6px solid #fff;border-radius:2px;
-    box-shadow:0 0 0 2px var(--gray-dk);
-  }
-  .cart .stamp{
-    margin:14px 0 0;font:8px/1.6 var(--pixel);color:#4a4945;letter-spacing:.04em;
-    display:flex;justify-content:space-between;gap:8px;
-  }
+  .cart{position:sticky;top:40px}
+  .cart svg{display:block;width:100%;height:auto;aspect-ratio:890/995;filter:drop-shadow(0 18px 30px rgba(0,0,0,.55))}
+  .cart text{font-family:var(--pixel)}
 
   /* ---- Copy ---- */
   h1{
@@ -131,7 +113,7 @@
 
   @media (max-width:760px){
     .wrap{grid-template-columns:1fr;gap:32px;padding-top:28px}
-    .cart{position:relative;max-width:300px;margin:0 auto;width:100%}
+    .cart{position:static;max-width:300px;margin:0 auto;width:100%}
     .menu a{font-size:12px}
     .dial{grid-template-columns:1fr}
     .dial .alt{grid-column:1;grid-row:auto;justify-self:start;margin-top:10px}
@@ -144,8 +126,33 @@
 <body>
 <main class="wrap">
   <aside class="cart" aria-hidden="true">
-    <img src="cover.jpg" alt="" width="600" height="600">
-    <div class="stamp"><span>NES-2DUDES-USA</span><span>BIT BROS</span></div>
+    <svg viewBox="0 0 890 995" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="body" x1="0" x2="1"><stop offset="0" stop-color="#8b8b89"/><stop offset=".5" stop-color="#959593"/><stop offset="1" stop-color="#868684"/></linearGradient>
+        <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a4a4a2"/><stop offset=".7" stop-color="#979795"/><stop offset="1" stop-color="#6f6f6d"/></linearGradient>
+        <clipPath id="lbl"><rect x="361" y="3" width="408" height="671" rx="6"/></clipPath>
+      </defs>
+      <path d="M0 4 Q0 0 4 0 H886 Q890 0 890 4 V815 H847 V991 Q847 995 843 995 H48 Q44 995 44 991 V810 H0 Z" fill="url(#body)" stroke="#6a6a68" stroke-width="3"/>
+      <rect x="48" y="0" width="60" height="6" fill="#7a7a78"/><rect x="782" y="0" width="60" height="6" fill="#7a7a78"/>
+      <rect x="137" y="0" width="195" height="995" fill="#8f8f8d" stroke="#6c6c6a" stroke-width="3"/>
+      <rect x="142" y="6" width="186" height="124" rx="4" fill="#4f4f4d"/>
+      <rect x="146" y="14" width="178" height="11" fill="#7c7c7a"/><rect x="146" y="38" width="178" height="11" fill="#7c7c7a"/><rect x="146" y="62" width="178" height="11" fill="#7c7c7a"/><rect x="146" y="86" width="178" height="11" fill="#7c7c7a"/><rect x="146" y="110" width="178" height="11" fill="#7c7c7a"/>
+      <rect x="142" y="150.0" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="187.6" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="225.2" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="262.8" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="300.4" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="338.0" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="375.6" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="413.2" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="450.8" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="488.4" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="526.0" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="563.6" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="601.2" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="638.8" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="676.4" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="714.0" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="751.6" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="789.2" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="826.8" width="186" height="17" fill="url(#ridge)"/><rect x="142" y="864.4" width="186" height="17" fill="url(#ridge)"/>
+      <rect x="146" y="903" width="178" height="86" rx="8" fill="#939391" stroke="#737371" stroke-width="3"/>
+      <rect x="352" y="0" width="426" height="684" rx="8" fill="#7b7b79"/>
+      <g clip-path="url(#lbl)">
+        <rect x="361" y="3" width="408" height="671" fill="#0d0d0d"/>
+        <rect x="373" y="15" width="384" height="384" fill="#fff"/>
+        <image href="cover.jpg" x="373" y="15" width="384" height="384"/>
+        <text x="565" y="452" text-anchor="middle" font-size="27" fill="#f2c50f">2 DUDES</text>
+        <text x="565" y="494" text-anchor="middle" font-size="27" fill="#f2c50f">AND A NES</text>
+        <rect x="361" y="522" width="408" height="44" fill="#d7261e"/>
+        <text x="565" y="553" text-anchor="middle" font-size="17" fill="#fff">PODCAST SERIES</text>
+        <text x="565" y="616" text-anchor="middle" font-size="13" fill="#bdbdbd">BIT BROTHERS NETWORK</text>
+        <text x="565" y="648" text-anchor="middle" font-size="11" fill="#7a7a7a">NES-2D-USA</text>
+      </g>
+      <path d="M414 742 H500 L457 810 Z" fill="#767674" stroke="#666664" stroke-width="2"/>
+    </svg>
   </aside>
 
   <section>
